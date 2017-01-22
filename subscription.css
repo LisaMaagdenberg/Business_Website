@@ -103,10 +103,11 @@ body {
 	color: #ffffff;
 }
 
+/* Dit moet je aanpassen */
 .list-text {
 	text-align: justify;
 	padding: 15px 30px 30px 30px;
-	padding-top: 10px;
+	padding-top: 10px; /* overbodig weet je ook waarom? */
 	background-color: #f5f1ed; 
 	color: #313130;
 }
@@ -130,7 +131,7 @@ a { color: inherit; }
 /* Show Button */
 
 .show{
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 50%;
   width: 150px;
@@ -170,7 +171,9 @@ a { color: inherit; }
 
 /* The mask */
 
-.mask{
+/* I commented this out -- Melvin */
+
+/*.mask{
   position: fixed;
   top: 0;
   left: 0;
@@ -183,12 +186,35 @@ a { color: inherit; }
   opacity: 0;
   
   transition: 0.7s;
-}
+}*/
 
 /* Modal */
 
 .modal{
  	text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  top: 66px;
+  left: 296px;
+  width: 150px;
+  height: 40px;
+  margin-left: -200px;
+  margin-top: -150px;
+  background: #bdc3c7;
+  z-index: 100;
+  visibility: hidden;
+  
+  opacity: 0;
+  
+  transition: 0.5s ease-out;
+  
+  /*transform: translateY(45px);*/
+}
+
+/* This is the old code -- Melvin */
+
+ /* text-align: center;
   font-size: 24px;
   font-weight: bold;
   position: fixed;
@@ -204,24 +230,21 @@ a { color: inherit; }
   
   opacity: 0;
   
-  transition: 0.5s ease-out;
-  
-  transform: translateY(45px);
-}
+  transition: 0.5s ease-out;*/
 
 /* Class Active */
 
-.active{
+.active {
   visibility: visible;
   opacity: 1;
 }
 
-/* When active class is added, that affects the modal class */
+ /*When active class is added, that affects the modal class */
 
 .active + .modal{
   visibility: visible;
   opacity: 1;
-  transform: translateY(0);
+  /*transform: translate(-55px, -10px);*/
 }
 
 
