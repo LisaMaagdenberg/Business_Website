@@ -53,31 +53,43 @@ it works perfectly, but not here. */
 When I try it on CodePen it does work. Not sure what I am doing wrong? */
 
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function(){
 
-// Click function for show the Modal
+	// Click function for show the Modal
 
-$(".show").on("click", function(){
-  $(".mask").addClass("active");
-});
+	$(".show").on("click", function(){
+    var buttonElement = $(this); //we only need *this* button, we do not need all the buttons.
 
-// Function for close the Modal
+    //for modalDiv: we want to add the class `active` to the div that has the class `modal` but *only* for the button
+    //that we clicked on, not for all the buttons.
+    var modalDiv = buttonElement.next();
 
-function closeModal(){
-  $(".mask").removeClass("active");
-}
+    //if you want to understand how this works, then you need to understand the difference between
+    // the following code (and you need to uncomment it if you want to test it):
+    // console.log( $(".mask") ); //select *all* classes that have ".mask" as its class
+    // console.log( $(this) ); //in this case, since we click on a button $(this) is the button element that is clicked on
+    // console.log ( $(this.next()) ) //select the next sibling of -- in this case -- the button element
 
-// Call the closeModal function on the clicks/keyboard
+	  modalDiv.addClass("active");
+	});
 
-$(".close, .mask").on("click", function(){
-  closeModal();
-});
+	// Function for close the Modal
 
-$(document).keyup(function(e) {
-  if (e.keyCode == 27) {
-    closeModal();
-  }
-});
+	function closeModal(){
+	  $(".mask").removeClass("active");
+	}
+
+	// Call the closeModal function on the clicks/keyboard
+
+	$(".close, .mask").on("click", function(){
+	  closeModal();
+	});
+
+	$(document).keyup(function(e) {
+	  if (e.keyCode == 27) {
+	    closeModal();
+	  }
+	});
 
 });
 
