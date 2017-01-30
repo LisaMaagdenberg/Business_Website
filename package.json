@@ -1,0 +1,22 @@
+{
+  "name": "business_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LisaMaagdenberg/Business_Website.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LisaMaagdenberg/Business_Website/issues"
+  },
+  "homepage": "https://github.com/LisaMaagdenberg/Business_Website#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
